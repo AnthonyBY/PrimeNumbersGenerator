@@ -7,3 +7,5 @@ Challenge:
 – Compare algoritm performance with and without multithreading 
 
 In progress... 
+
+![alt tag](http://jmp.sh/qT99t5s)

@@ -35,6 +35,7 @@
 		9299563F1AF0251D00C52378 /* slider-default7-trackCrossedOver.png in Resources */ = {isa = PBXBuildFile; fileRef = 9299562D1AF0251D00C52378 /* slider-default7-trackCrossedOver.png */; };
 		929956401AF0251D00C52378 /* slider-default7-trackCrossedOver@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9299562E1AF0251D00C52378 /* slider-default7-trackCrossedOver@2x.png */; };
 		929956441AF036EF00C52378 /* SieveOfAtkin.m in Sources */ = {isa = PBXBuildFile; fileRef = 929956431AF036EF00C52378 /* SieveOfAtkin.m */; };
+		929956461AF04EDA00C52378 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 929956451AF04ED900C52378 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		9299562E1AF0251D00C52378 /* slider-default7-trackCrossedOver@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-default7-trackCrossedOver@2x.png"; sourceTree = "<group>"; };
 		929956421AF036EF00C52378 /* SieveOfAtkin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SieveOfAtkin.h; sourceTree = "<group>"; };
 		929956431AF036EF00C52378 /* SieveOfAtkin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SieveOfAtkin.m; sourceTree = "<group>"; };
+		929956451AF04ED900C52378 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9EF8A209A21525BDE3D907F3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D25F237D32D4BB3EF70E7FA2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F35E8434C50297600C3BD110 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,6 +129,7 @@
 		929955E31AF01B4B00C52378 = {
 			isa = PBXGroup;
 			children = (
+				929956451AF04ED900C52378 /* README.md */,
 				929955EE1AF01B4B00C52378 /* PrimeNumbersGenerator */,
 				929956081AF01B4B00C52378 /* PrimeNumbersGeneratorTests */,
 				929955ED1AF01B4B00C52378 /* Products */,
@@ -400,6 +403,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				929956461AF04EDA00C52378 /* README.md in Sources */,
 				929956441AF036EF00C52378 /* SieveOfAtkin.m in Sources */,
 				929955F81AF01B4B00C52378 /* ViewController.m in Sources */,
 				929956191AF01FAB00C52378 /* NMRangeSlider.m in Sources */,
