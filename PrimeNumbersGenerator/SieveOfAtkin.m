@@ -70,6 +70,8 @@
     
      NSTimeInterval distanceBetweenDates = [endDate timeIntervalSinceDate:startDate];
     
+    NSLog(@"Atkin Time - %f", distanceBetweenDates);
+    
     [SVProgressHUD dismiss];
     
     NSMutableArray *primeArray = [@[@"2", @"3", @"5"] mutableCopy];
