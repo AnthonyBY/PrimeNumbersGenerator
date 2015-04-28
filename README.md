@@ -8,4 +8,4 @@ Challenge:
 
 In progress... 
 
-![alt tag](https://jumpshare.com/v/YOdyu3MV6Gd2g4kR7bjA)
+![alt tag](http://habrastorage.org/files/1b8/2a5/759/1b82a5759da647dc92bba2179bb3cd0d.png)
