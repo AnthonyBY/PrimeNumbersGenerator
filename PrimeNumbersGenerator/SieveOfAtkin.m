@@ -11,9 +11,9 @@
 
 @implementation SieveOfAtkin
 
-+ (NSArray *) generatePrimeNumberTill: (int) limit
+- (NSArray *) generatePrimeNumberTill: (int) limit
 {
-   // int limit = 1000;
+    // int limit = 1000;
     [SVProgressHUD showInfoWithStatus:@"Magic..."];
     NSDate *startDate = [NSDate date];
     int sqr_lim;
@@ -68,7 +68,9 @@
     
     NSDate *endDate = [NSDate date];
     
-     NSTimeInterval distanceBetweenDates = [endDate timeIntervalSinceDate:startDate];
+    NSTimeInterval distanceBetweenDates = [endDate timeIntervalSinceDate:startDate];
+    
+    self.generationTime = distanceBetweenDates;
     
     NSLog(@"Atkin Time - %f", distanceBetweenDates);
     
@@ -77,10 +79,10 @@
     NSMutableArray *primeArray = [@[@"2", @"3", @"5"] mutableCopy];
     
     // Вывод списка простых чисел в консоль.
-   // printf("2, 3, 5");
+    // printf("2, 3, 5");
     for (i = 6; i <= limit; i++) {  // добавлена проверка делимости на 3 и 5. В оригинальной версии алгоритма потребности в ней нет.
         if ((is_prime[i]) && (i % 3 != 0) && (i % 5 !=  0)){
-           // printf(", %d", i);
+            // printf(", %d", i);
             [primeArray addObject:[NSString stringWithFormat:@"%i", i]];
         }
     }

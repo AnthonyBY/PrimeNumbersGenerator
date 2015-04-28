@@ -10,6 +10,8 @@
 #import "NMRangeSlider.h"
 #import "SieveOfAtkin.h"
 
+#define RGB(r,g,b,a) [UIColor colorWithRed:r/255. green:g/255. blue:b/255. alpha:a]
+
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet NMRangeSlider *labelSlider;
@@ -43,7 +45,7 @@
     
     if([self.view respondsToSelector:@selector(setTintColor:)])
     {
-        self.view.tintColor = [UIColor blueColor];
+        self.view.tintColor = RGB(0, 51, 51, 1);
     }
     
 }
@@ -57,7 +59,10 @@
 
 - (IBAction)generateButtonPressed:(UIButton *)sender {
     
-    self.textView.text = [[[SieveOfAtkin generatePrimeNumberTill:[self.upperLabel.text intValue]]  valueForKey:@"description"] componentsJoinedByString:@", "];
+    SieveOfAtkin *atkin = [[SieveOfAtkin alloc] init];
+    self.textView.text = [[[atkin generatePrimeNumberTill:[self.upperLabel.text intValue]]  valueForKey:@"description"] componentsJoinedByString:@", "];
+    
+    self.atkingPerformanceLabel.text = [NSString stringWithFormat:@"%f mls", atkin.generationTime];
 }
 
 // Handle control value changed events just like a normal slider
@@ -70,10 +75,10 @@
 - (void) configureLabelSlider
 {
     self.labelSlider.minimumValue = 0;
-    self.labelSlider.maximumValue = 214748;
+    self.labelSlider.maximumValue = 327670;
     
     self.labelSlider.lowerValue = 0;
-    self.labelSlider.upperValue = 214748;
+    self.labelSlider.upperValue = 327670;
     self.labelSlider.minimumRange = 10;
 }
 

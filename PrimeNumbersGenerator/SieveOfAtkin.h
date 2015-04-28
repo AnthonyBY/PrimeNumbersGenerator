@@ -10,6 +10,8 @@
 
 @interface SieveOfAtkin : NSObject
 
-+ (NSArray *) generatePrimeNumberTill: (int) limit;
+@property (atomic) double generationTime;
+
+- (NSArray *) generatePrimeNumberTill: (int) limit;
 
 @end
