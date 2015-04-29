@@ -72,10 +72,10 @@
 - (void) configureLabelSlider
 {
     self.labelSlider.minimumValue = 0;
-    self.labelSlider.maximumValue = 327670;
+    self.labelSlider.maximumValue = 858599500;
     
     self.labelSlider.lowerValue = 0;
-    self.labelSlider.upperValue = 327670;
+    self.labelSlider.upperValue = 858599500;
     self.labelSlider.minimumRange = 10;
 }
 

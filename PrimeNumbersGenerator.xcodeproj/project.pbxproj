@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3BC0987F4E517FCE2D7BA7C8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F35E8434C50297600C3BD110 /* libPods.a */; };
+		9262C33B1AF164B1006D960A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9262C33A1AF164B1006D960A /* CoreData.framework */; };
+		9262C33E1AF164D3006D960A /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9262C33D1AF164D3006D960A /* DBManager.m */; };
+		9262C3411AF166B2006D960A /* PrimeNumbersGenerator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9262C33F1AF166B2006D960A /* PrimeNumbersGenerator.xcdatamodeld */; };
 		929955F21AF01B4B00C52378 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 929955F11AF01B4B00C52378 /* main.m */; };
 		929955F51AF01B4B00C52378 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 929955F41AF01B4B00C52378 /* AppDelegate.m */; };
 		929955F81AF01B4B00C52378 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 929955F71AF01B4B00C52378 /* ViewController.m */; };
@@ -49,6 +52,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9262C33A1AF164B1006D960A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9262C33C1AF164D3006D960A /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		9262C33D1AF164D3006D960A /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		9262C3401AF166B2006D960A /* PrimeNumbersGenerator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PrimeNumbersGenerator.xcdatamodel; sourceTree = "<group>"; };
 		929955EC1AF01B4B00C52378 /* PrimeNumbersGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrimeNumbersGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		929955F01AF01B4B00C52378 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		929955F11AF01B4B00C52378 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -95,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9262C33B1AF164B1006D960A /* CoreData.framework in Frameworks */,
 				3BC0987F4E517FCE2D7BA7C8 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,9 +129,20 @@
 		84E96D188853970852588E4F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9262C33A1AF164B1006D960A /* CoreData.framework */,
 				F35E8434C50297600C3BD110 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9262C3391AF16454006D960A /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				9262C33C1AF164D3006D960A /* DBManager.h */,
+				9262C33D1AF164D3006D960A /* DBManager.m */,
+				9262C33F1AF166B2006D960A /* PrimeNumbersGenerator.xcdatamodeld */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 		929955E31AF01B4B00C52378 = {
@@ -150,6 +169,7 @@
 		929955EE1AF01B4B00C52378 /* PrimeNumbersGenerator */ = {
 			isa = PBXGroup;
 			children = (
+				9262C3391AF16454006D960A /* CoreData */,
 				929956411AF036B300C52378 /* Model */,
 				929955F31AF01B4B00C52378 /* AppDelegate.h */,
 				929955F41AF01B4B00C52378 /* AppDelegate.m */,
@@ -403,7 +423,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9262C33E1AF164D3006D960A /* DBManager.m in Sources */,
 				929956461AF04EDA00C52378 /* README.md in Sources */,
+				9262C3411AF166B2006D960A /* PrimeNumbersGenerator.xcdatamodeld in Sources */,
 				929956441AF036EF00C52378 /* SieveOfAtkin.m in Sources */,
 				929955F81AF01B4B00C52378 /* ViewController.m in Sources */,
 				929956191AF01FAB00C52378 /* NMRangeSlider.m in Sources */,
@@ -617,6 +639,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9262C33F1AF166B2006D960A /* PrimeNumbersGenerator.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9262C3401AF166B2006D960A /* PrimeNumbersGenerator.xcdatamodel */,
+			);
+			currentVersion = 9262C3401AF166B2006D960A /* PrimeNumbersGenerator.xcdatamodel */;
+			path = PrimeNumbersGenerator.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 929955E41AF01B4B00C52378 /* Project object */;
 }
