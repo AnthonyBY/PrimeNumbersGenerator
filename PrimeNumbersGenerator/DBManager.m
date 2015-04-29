@@ -142,7 +142,7 @@
     
     NSManagedObjectContext *context = [self managedObjectContext];
     
-    for(NSString *value in items)
+    for(NSNumber *value in items)
     {
         //Check if Prime Number alredy exist
         NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -160,7 +160,7 @@
             // Create a new managed object
             NSManagedObject *newPrimeNumber = [NSEntityDescription insertNewObjectForEntityForName:@"PrimeNumber" inManagedObjectContext:context];
             
-            [newPrimeNumber setValue:value forKey:@"value"];
+            [newPrimeNumber setValue:@([value intValue]) forKey:@"value"];
         }
     }
 

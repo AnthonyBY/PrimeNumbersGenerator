@@ -82,7 +82,7 @@
     {
         if([primeNumbersString isEqualToString:@""])
         {
-            primeNumbersString = [primeNumber.value mutableCopy];
+            primeNumbersString = [[primeNumber.value stringValue] mutableCopy];
         } else {
           [primeNumbersString appendString:[NSString stringWithFormat:@", %@", primeNumber.value]];
         }
