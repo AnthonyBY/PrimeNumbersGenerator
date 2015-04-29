@@ -11,6 +11,7 @@
 		9262C33B1AF164B1006D960A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9262C33A1AF164B1006D960A /* CoreData.framework */; };
 		9262C33E1AF164D3006D960A /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9262C33D1AF164D3006D960A /* DBManager.m */; };
 		9262C3411AF166B2006D960A /* PrimeNumbersGenerator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9262C33F1AF166B2006D960A /* PrimeNumbersGenerator.xcdatamodeld */; };
+		9262C3471AF1751D006D960A /* PrimeNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 9262C3461AF1751D006D960A /* PrimeNumber.m */; };
 		929955F21AF01B4B00C52378 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 929955F11AF01B4B00C52378 /* main.m */; };
 		929955F51AF01B4B00C52378 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 929955F41AF01B4B00C52378 /* AppDelegate.m */; };
 		929955F81AF01B4B00C52378 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 929955F71AF01B4B00C52378 /* ViewController.m */; };
@@ -38,7 +39,6 @@
 		9299563F1AF0251D00C52378 /* slider-default7-trackCrossedOver.png in Resources */ = {isa = PBXBuildFile; fileRef = 9299562D1AF0251D00C52378 /* slider-default7-trackCrossedOver.png */; };
 		929956401AF0251D00C52378 /* slider-default7-trackCrossedOver@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9299562E1AF0251D00C52378 /* slider-default7-trackCrossedOver@2x.png */; };
 		929956441AF036EF00C52378 /* SieveOfAtkin.m in Sources */ = {isa = PBXBuildFile; fileRef = 929956431AF036EF00C52378 /* SieveOfAtkin.m */; };
-		929956461AF04EDA00C52378 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 929956451AF04ED900C52378 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +56,8 @@
 		9262C33C1AF164D3006D960A /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		9262C33D1AF164D3006D960A /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
 		9262C3401AF166B2006D960A /* PrimeNumbersGenerator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PrimeNumbersGenerator.xcdatamodel; sourceTree = "<group>"; };
+		9262C3451AF1751D006D960A /* PrimeNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrimeNumber.h; sourceTree = "<group>"; };
+		9262C3461AF1751D006D960A /* PrimeNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrimeNumber.m; sourceTree = "<group>"; };
 		929955EC1AF01B4B00C52378 /* PrimeNumbersGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrimeNumbersGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		929955F01AF01B4B00C52378 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		929955F11AF01B4B00C52378 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -138,6 +140,8 @@
 		9262C3391AF16454006D960A /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				9262C3451AF1751D006D960A /* PrimeNumber.h */,
+				9262C3461AF1751D006D960A /* PrimeNumber.m */,
 				9262C33C1AF164D3006D960A /* DBManager.h */,
 				9262C33D1AF164D3006D960A /* DBManager.m */,
 				9262C33F1AF166B2006D960A /* PrimeNumbersGenerator.xcdatamodeld */,
@@ -424,12 +428,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9262C33E1AF164D3006D960A /* DBManager.m in Sources */,
-				929956461AF04EDA00C52378 /* README.md in Sources */,
 				9262C3411AF166B2006D960A /* PrimeNumbersGenerator.xcdatamodeld in Sources */,
 				929956441AF036EF00C52378 /* SieveOfAtkin.m in Sources */,
 				929955F81AF01B4B00C52378 /* ViewController.m in Sources */,
 				929956191AF01FAB00C52378 /* NMRangeSlider.m in Sources */,
 				929955F51AF01B4B00C52378 /* AppDelegate.m in Sources */,
+				9262C3471AF1751D006D960A /* PrimeNumber.m in Sources */,
 				929955F21AF01B4B00C52378 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

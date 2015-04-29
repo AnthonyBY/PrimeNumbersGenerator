@@ -7,6 +7,7 @@
 //
 
 #import "DBManager.h"
+#import "PrimeNumber.h"
 
 
 @interface DBManager () <NSFetchedResultsControllerDelegate>
@@ -71,7 +72,7 @@
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"iDiscount" withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"PrimeNumbersGenerator" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
 }
@@ -133,4 +134,45 @@
     }
 }
 
+
+#pragma  mark - Methods
+
+- (void) savePrimeNumbers:(NSArray *) items
+{
+    NSManagedObjectContext *context = [self managedObjectContext];
+    
+    
+    for(NSString *value in items)
+    {
+        // Create a new managed object
+        NSManagedObject *newDevice = [NSEntityDescription insertNewObjectForEntityForName:@"PrimeNumber" inManagedObjectContext:context];
+        
+        [newDevice setValue:value forKey:@"value"];
+    }
+
+    
+    NSError *error = nil;
+    // Save the object to persistent store
+    if (![context save:&error]) {
+        NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);
+    }
+}
+
+- (NSArray *) getCurrentItems
+{
+    NSDate *startDate = [NSDate date];
+    
+    // Fetch the devices from persistent data store
+    NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"PrimeNumber"];
+    [fetchRequest setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"value" ascending:YES]]];
+    
+    NSArray *primeNumbersArray = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
+    
+    NSDate *endDate = [NSDate date];
+    NSTimeInterval distanceBetweenDates = [endDate timeIntervalSinceDate:startDate];
+    
+    self.readingFromCoreDataTime = distanceBetweenDates;
+   return primeNumbersArray;
+}
 @end

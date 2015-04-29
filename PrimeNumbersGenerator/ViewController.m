@@ -9,6 +9,9 @@
 #import "ViewController.h"
 #import "NMRangeSlider.h"
 #import "SieveOfAtkin.h"
+#import "DBManager.h"
+#import <SVProgressHUD.h>
+#import "PrimeNumber.h"
 
 #define RGB(r,g,b,a) [UIColor colorWithRed:r/255. green:g/255. blue:b/255. alpha:a]
 
@@ -22,6 +25,8 @@
 
 
 @property (weak, nonatomic) IBOutlet UILabel *atkingPerformanceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *coreDataTimeLabel;
+
 
 @end
 
@@ -55,12 +60,12 @@
 #pragma mark - IBActions
 
 - (IBAction)generateButtonPressed:(UIButton *)sender {
-    
-    SieveOfAtkin *atkin = [[SieveOfAtkin alloc] init];
-    self.textView.text = [[[atkin generatePrimeNumberTill:[self.upperLabel.text intValue]]  valueForKey:@"description"] componentsJoinedByString:@", "];
-    
-    self.atkingPerformanceLabel.text = [NSString stringWithFormat:@"%f mls", atkin.generationTime];
+   
+    [self generateAtkin];
+    [self saveCurrentValueToDB];
 }
+
+
 
 // Handle control value changed events just like a normal slider
 - (IBAction)labelSliderChanged:(NMRangeSlider*)sender
@@ -69,15 +74,36 @@
     
 }
 
+- (IBAction)getValueFromCoreDataPressed:(UIButton *)sender {
+    
+    NSMutableString *primeNumbersString = [@"" mutableCopy];
+    NSArray *primeNumbersArray = [[DBManager manager] getCurrentItems];
+    for(PrimeNumber *primeNumber in primeNumbersArray)
+    {
+        if([primeNumbersString isEqualToString:@""])
+        {
+            primeNumbersString = [primeNumber.value mutableCopy];
+        } else {
+          [primeNumbersString appendString:[NSString stringWithFormat:@", %@", primeNumber.value]];
+        }
+    }
+        
+    self.textView.text = primeNumbersString;
+    
+    self.coreDataTimeLabel.text = [NSString stringWithFormat:@"%f mls", [DBManager manager].readingFromCoreDataTime];
+}
+
+
 - (void) configureLabelSlider
 {
     self.labelSlider.minimumValue = 0;
-    self.labelSlider.maximumValue = 858599500;
+    self.labelSlider.maximumValue = 10000;
     
     self.labelSlider.lowerValue = 0;
-    self.labelSlider.upperValue = 858599500;
+    self.labelSlider.upperValue = 10000;
     self.labelSlider.minimumRange = 10;
 }
+
 
 - (void) updateSliderLabels
 {
@@ -95,6 +121,25 @@
     upperCenter.y = (self.labelSlider.center.y - 30.0f);
     self.upperLabel.center = upperCenter;
     self.upperLabel.text = [NSString stringWithFormat:@"%d", (int)self.labelSlider.upperValue];
+}
+
+#pragma mark - Generator
+
+- (void) generateAtkin
+{
+    SieveOfAtkin *atkin = [[SieveOfAtkin alloc] init];
+    self.textView.text = [[[atkin generatePrimeNumberTill:[self.upperLabel.text intValue]]  valueForKey:@"description"] componentsJoinedByString:@", "];
+    self.atkingPerformanceLabel.text = [NSString stringWithFormat:@"%f mls", atkin.generationTime];
+}
+
+#pragma mark - DB Helper
+
+-(void) saveCurrentValueToDB
+{
+    [SVProgressHUD showInfoWithStatus:@"Saving to DB"];
+    SieveOfAtkin *atkin = [[SieveOfAtkin alloc] init];
+    [[DBManager manager] savePrimeNumbers:[atkin generatePrimeNumberTill:[self.upperLabel.text intValue]]];
+    [SVProgressHUD dismiss];
 }
 
 

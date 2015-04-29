@@ -17,6 +17,8 @@
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
+@property (atomic) double readingFromCoreDataTime;
+
 + (instancetype) manager;
 
 - (void)saveContext;
@@ -24,7 +26,10 @@
 
 #pragma  mark - Methods
 
-
 //- (NSArray *) getCardsForUser: (User *) user;
+
+-(void) savePrimeNumbers:(NSArray *) items;
+
+-(NSArray *) getCurrentItems;
 
 @end
