@@ -139,15 +139,29 @@
 
 - (void) savePrimeNumbers:(NSArray *) items
 {
-    NSManagedObjectContext *context = [self managedObjectContext];
     
+    NSManagedObjectContext *context = [self managedObjectContext];
     
     for(NSString *value in items)
     {
-        // Create a new managed object
-        NSManagedObject *newDevice = [NSEntityDescription insertNewObjectForEntityForName:@"PrimeNumber" inManagedObjectContext:context];
+        //Check if Prime Number alredy exist
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"PrimeNumber" inManagedObjectContext:self.managedObjectContext];
+        [fetchRequest setEntity:entity];
         
-        [newDevice setValue:value forKey:@"value"];
+        NSPredicate* predicate = [NSPredicate predicateWithFormat:@"value == %@", value];
+        [fetchRequest setPredicate:predicate];
+        
+        NSError *error = nil;
+        PrimeNumber *managedObject = [[self.managedObjectContext executeFetchRequest:fetchRequest error:&error] firstObject];
+        
+        if(!managedObject)
+        {
+            // Create a new managed object
+            NSManagedObject *newPrimeNumber = [NSEntityDescription insertNewObjectForEntityForName:@"PrimeNumber" inManagedObjectContext:context];
+            
+            [newPrimeNumber setValue:value forKey:@"value"];
+        }
     }
 
     
