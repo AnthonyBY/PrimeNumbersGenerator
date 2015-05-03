@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "NMRangeSlider.h"
 #import "SieveOfAtkin.h"
+#import "SieveOfEratosthenes.h"
 #import "DBManager.h"
 #import <SVProgressHUD.h>
 #import "PrimeNumber.h"
@@ -26,6 +27,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *atkingPerformanceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *coreDataTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *eratostehnTimeLabel;
 
 
 @end
@@ -62,7 +64,8 @@
 - (IBAction)generateButtonPressed:(UIButton *)sender {
    
     [self generateAtkin];
-    [self saveCurrentValueToDB];
+    [self generateEratosthen];
+  //  [self saveCurrentValueToDB];
 }
 
 
@@ -97,10 +100,10 @@
 - (void) configureLabelSlider
 {
     self.labelSlider.minimumValue = 0;
-    self.labelSlider.maximumValue = 10000;
+    self.labelSlider.maximumValue = 50000;
     
     self.labelSlider.lowerValue = 0;
-    self.labelSlider.upperValue = 10000;
+    self.labelSlider.upperValue = 50000;
     self.labelSlider.minimumRange = 10;
 }
 
@@ -130,6 +133,13 @@
     SieveOfAtkin *atkin = [[SieveOfAtkin alloc] init];
     self.textView.text = [[[atkin generatePrimeNumberTill:[self.upperLabel.text intValue]]  valueForKey:@"description"] componentsJoinedByString:@", "];
     self.atkingPerformanceLabel.text = [NSString stringWithFormat:@"%f mls", atkin.generationTime];
+}
+
+-(void) generateEratosthen
+{
+    SieveOfEratosthenes *eratoshten = [[SieveOfEratosthenes alloc] init];
+       self.textView.text = [[[eratoshten generatePrimeNumberTill:[self.upperLabel.text intValue]]  valueForKey:@"description"] componentsJoinedByString:@", "];
+    self.eratostehnTimeLabel.text = [NSString stringWithFormat:@"%f mls", eratoshten.generationTime];
 }
 
 #pragma mark - DB Helper

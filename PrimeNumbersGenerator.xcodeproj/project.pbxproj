@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3BC0987F4E517FCE2D7BA7C8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F35E8434C50297600C3BD110 /* libPods.a */; };
+		922C147A1AF6A00F00F83D07 /* SieveOfEratosthenes.m in Sources */ = {isa = PBXBuildFile; fileRef = 922C14791AF6A00E00F83D07 /* SieveOfEratosthenes.m */; };
 		9262C33B1AF164B1006D960A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9262C33A1AF164B1006D960A /* CoreData.framework */; };
 		9262C33E1AF164D3006D960A /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9262C33D1AF164D3006D960A /* DBManager.m */; };
 		9262C3411AF166B2006D960A /* PrimeNumbersGenerator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9262C33F1AF166B2006D960A /* PrimeNumbersGenerator.xcdatamodeld */; };
@@ -52,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		922C14781AF6A00E00F83D07 /* SieveOfEratosthenes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SieveOfEratosthenes.h; sourceTree = "<group>"; };
+		922C14791AF6A00E00F83D07 /* SieveOfEratosthenes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SieveOfEratosthenes.m; sourceTree = "<group>"; };
 		9262C33A1AF164B1006D960A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		9262C33C1AF164D3006D960A /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		9262C33D1AF164D3006D960A /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
@@ -270,6 +273,8 @@
 			children = (
 				929956421AF036EF00C52378 /* SieveOfAtkin.h */,
 				929956431AF036EF00C52378 /* SieveOfAtkin.m */,
+				922C14781AF6A00E00F83D07 /* SieveOfEratosthenes.h */,
+				922C14791AF6A00E00F83D07 /* SieveOfEratosthenes.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -434,6 +439,7 @@
 				929956191AF01FAB00C52378 /* NMRangeSlider.m in Sources */,
 				929955F51AF01B4B00C52378 /* AppDelegate.m in Sources */,
 				9262C34A1AF18265006D960A /* PrimeNumber.m in Sources */,
+				922C147A1AF6A00F00F83D07 /* SieveOfEratosthenes.m in Sources */,
 				929955F21AF01B4B00C52378 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

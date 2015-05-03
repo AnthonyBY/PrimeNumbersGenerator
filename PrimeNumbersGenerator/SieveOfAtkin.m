@@ -13,8 +13,8 @@
 
 - (NSArray *) generatePrimeNumberTill: (int) limit
 {
-    // int limit = 1000;
     [SVProgressHUD showInfoWithStatus:@"Magic..."];
+    
     NSDate *startDate = [NSDate date];
     int sqr_lim;
     bool is_prime[limit + 1];
