@@ -28,6 +28,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *atkingPerformanceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *coreDataTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *eratostehnTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *eratostehnThreadsTimeLabel;
+
 
 
 @end
@@ -39,6 +41,7 @@
     
     [self configureLabelSlider];
     [self updateSliderLabels];
+
 }
 
 - (void) viewDidAppear:(BOOL)animated
@@ -65,6 +68,7 @@
    
     [self generateAtkin];
     [self generateEratosthen];
+    [self generateThreadsEratosthen];
   //  [self saveCurrentValueToDB];
 }
 
@@ -100,10 +104,10 @@
 - (void) configureLabelSlider
 {
     self.labelSlider.minimumValue = 0;
-    self.labelSlider.maximumValue = 50000;
+    self.labelSlider.maximumValue = 10000;
     
     self.labelSlider.lowerValue = 0;
-    self.labelSlider.upperValue = 50000;
+    self.labelSlider.upperValue = 10000;
     self.labelSlider.minimumRange = 10;
 }
 
@@ -140,6 +144,13 @@
     SieveOfEratosthenes *eratoshten = [[SieveOfEratosthenes alloc] init];
        self.textView.text = [[[eratoshten generatePrimeNumberTill:[self.upperLabel.text intValue]]  valueForKey:@"description"] componentsJoinedByString:@", "];
     self.eratostehnTimeLabel.text = [NSString stringWithFormat:@"%f mls", eratoshten.generationTime];
+}
+
+-(void) generateThreadsEratosthen
+{
+    SieveOfEratosthenes *eratoshten = [[SieveOfEratosthenes alloc] init];
+    self.textView.text = [[[eratoshten threadsPrimeNumberGenetrationTill:[self.upperLabel.text intValue]]  valueForKey:@"description"] componentsJoinedByString:@", "];
+    self.eratostehnThreadsTimeLabel.text = [NSString stringWithFormat:@"%f mls", eratoshten.threadsGenerationTime];
 }
 
 #pragma mark - DB Helper
